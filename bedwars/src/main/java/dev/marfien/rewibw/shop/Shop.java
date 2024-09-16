@@ -19,36 +19,36 @@ import org.bukkit.potion.PotionEffectType;
 public class Shop {
 
     private static final ShopCategory[] CATEGORIES = new ShopCategory[]{
-            new ShopCategory("Blöcke", Material.RED_SANDSTONE,
+            new ShopCategory("Blocks", Material.RED_SANDSTONE,
                     new StaticShopItem(Items.RED_SANDSTONE, ResourceType.BRONZE.withAmount(1), 32),
                     new StaticShopItem(Items.ENDSTONE, ResourceType.BRONZE.withAmount(7), 64),
                     new StaticShopItem(Items.IRON_BLOCK, ResourceType.SILVER.withAmount(3), 64),
                     new DynamicShopItem(
                             player -> ItemBuilder.of(Material.STAINED_GLASS, TeamManager.getTeam(player).getColor().getDyeColor().getData(), 1)
-                                    .setDisplayName(ChatColor.GRAY + "Glas")
+                                    .setDisplayName(ChatColor.GRAY + "Verre")
                                     .asItemStack(),
                             ResourceType.BRONZE.withAmount(4),
                             64),
                     new StaticShopItem(ItemBuilder.of(Material.GLOWSTONE, 4).setDisplayName(ChatColor.GRAY + "Glowstone").asItemStack(), ResourceType.BRONZE.withAmount(16), 16)
             ),
-            new ShopCategory("Rüstung", Material.CHAINMAIL_CHESTPLATE,
+            new ShopCategory("Armures", Material.CHAINMAIL_CHESTPLATE,
                     new DynamicShopItem(
                             player -> ItemBuilder.of(Material.LEATHER_HELMET)
-                                    .setDisplayName(ChatColor.BLUE + "Lederhelm")
+                                    .setDisplayName(ChatColor.BLUE + "Casque en cuir")
                                     .setLeatherArmorColor(TeamManager.getTeam(player).getColor().getDyeColor().getColor())
                                     .asItemStack(),
                             ResourceType.BRONZE.withAmount(1),
                             1),
                     new DynamicShopItem(
                             player -> ItemBuilder.of(Material.LEATHER_LEGGINGS)
-                                    .setDisplayName(ChatColor.BLUE + "Lederhose")
+                                    .setDisplayName(ChatColor.BLUE + "Jambières en cuir")
                                     .setLeatherArmorColor(TeamManager.getTeam(player).getColor().getDyeColor().getColor())
                                     .asItemStack(),
                             ResourceType.BRONZE.withAmount(1),
                             1),
                     new DynamicShopItem(
                             player -> ItemBuilder.of(Material.LEATHER_BOOTS)
-                                    .setDisplayName(ChatColor.BLUE + "Lederschuhe")
+                                    .setDisplayName(ChatColor.BLUE + "Bottes en cuir")
                                     .setLeatherArmorColor(TeamManager.getTeam(player).getColor().getDyeColor().getColor())
                                     .asItemStack(),
                             ResourceType.BRONZE.withAmount(1),
@@ -57,59 +57,59 @@ public class Shop {
                             ResourceType.SILVER.withAmount(1), 1),
                     new StaticShopItem(
                             ItemBuilder.of(Material.CHAINMAIL_CHESTPLATE)
-                                    .setDisplayName(ChatColor.BLUE + "Brustplatte II")
+                                    .setDisplayName(ChatColor.BLUE + "Plastron II")
                                     .addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                                     .asItemStack(),
                             ResourceType.SILVER.withAmount(3),
                             1),
                     new StaticShopItem(
                             ItemBuilder.of(Material.CHAINMAIL_CHESTPLATE)
-                                    .setDisplayName(ChatColor.BLUE + "Brustplatte III")
+                                    .setDisplayName(ChatColor.BLUE + "Plastron III")
                                     .addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2)
                                     .asItemStack(),
                             ResourceType.SILVER.withAmount(7),
                             1),
                     new StaticShopItem(
                             ItemBuilder.of(Material.CHAINMAIL_CHESTPLATE)
-                                    .setDisplayName(ChatColor.BLUE + "Brustplatte IV")
+                                    .setDisplayName(ChatColor.BLUE + "Plastron IV")
                                     .addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2)
                                     .addEnchantment(Enchantment.THORNS, 1)
                                     .asItemStack(),
                             ResourceType.SILVER.withAmount(11),
                             1)
             ),
-            new ShopCategory("Spitzhacken", Material.IRON_PICKAXE,
-                    new StaticShopItem(ItemBuilder.of(Material.WOOD_PICKAXE).setDisplayName(ChatColor.YELLOW + "Spitzhacke I").asItemStack(), ResourceType.BRONZE.withAmount(7), 1),
-                    new StaticShopItem(ItemBuilder.of(Material.STONE_PICKAXE).setDisplayName(ChatColor.YELLOW + "Spitzhacke II").asItemStack(), ResourceType.SILVER.withAmount(2), 1),
-                    new StaticShopItem(ItemBuilder.of(Material.IRON_PICKAXE).setDisplayName(ChatColor.YELLOW + "Spitzhacke III").asItemStack(), ResourceType.GOLD.withAmount(1), 1)
+            new ShopCategory("Pioches", Material.IRON_PICKAXE,
+                    new StaticShopItem(ItemBuilder.of(Material.WOOD_PICKAXE).setDisplayName(ChatColor.YELLOW + "Pioche I").asItemStack(), ResourceType.BRONZE.withAmount(7), 1),
+                    new StaticShopItem(ItemBuilder.of(Material.STONE_PICKAXE).setDisplayName(ChatColor.YELLOW + "Pioche II").asItemStack(), ResourceType.SILVER.withAmount(2), 1),
+                    new StaticShopItem(ItemBuilder.of(Material.IRON_PICKAXE).setDisplayName(ChatColor.YELLOW + "Pioche III").asItemStack(), ResourceType.GOLD.withAmount(1), 1)
             ),
-            new ShopCategory("Schwerter", Material.WOOD_SWORD,
+            new ShopCategory("Épées", Material.WOOD_SWORD,
                     new PerkShopItem(
                             PerkManager.STICK_PERK_GROUP,
                             ItemBuilder.of(Material.STICK)
-                                    .setDisplayName(ChatColor.RED + "Knüppel")
+                                    .setDisplayName(ChatColor.RED + "Bâton")
                                     .addEnchantment(Enchantment.KNOCKBACK, 1)
                                     .asItemStack(),
                             ResourceType.BRONZE.withAmount(10),
                             1),
-                    new StaticShopItem(ItemBuilder.of(Material.WOOD_SWORD).setDisplayName(ChatColor.RED + "Schwert I").asItemStack(), ResourceType.SILVER.withAmount(1), 1),
+                    new StaticShopItem(ItemBuilder.of(Material.WOOD_SWORD).setDisplayName(ChatColor.RED + "Épée I").asItemStack(), ResourceType.SILVER.withAmount(1), 1),
                     new StaticShopItem(
                             ItemBuilder.of(Material.WOOD_SWORD)
-                                    .setDisplayName(ChatColor.RED + "Schwert II")
+                                    .setDisplayName(ChatColor.RED + "Épée II")
                                     .addEnchantment(Enchantment.DAMAGE_ALL, 1)
                                     .asItemStack(),
                             ResourceType.SILVER.withAmount(3),
                             1),
                     new StaticShopItem(
                             ItemBuilder.of(Material.WOOD_SWORD)
-                                    .setDisplayName(ChatColor.RED + "Schwert III")
+                                    .setDisplayName(ChatColor.RED + "Épée III")
                                     .addEnchantment(Enchantment.DAMAGE_ALL, 2)
                                     .asItemStack(),
                             ResourceType.SILVER.withAmount(5),
                             1),
                     new StaticShopItem(
                             ItemBuilder.of(Material.IRON_SWORD)
-                                    .setDisplayName(ChatColor.RED + "Schwert IV")
+                                    .setDisplayName(ChatColor.RED + "Épée IV")
                                     .addEnchantment(Enchantment.DAMAGE_ALL, 1)
                                     .addEnchantment(Enchantment.KNOCKBACK, 1)
                                     .asItemStack(),
@@ -117,10 +117,10 @@ public class Shop {
                             1)
 
             ),
-            new ShopCategory("Bögen", Material.BOW,
+            new ShopCategory("Arcs", Material.BOW,
                     new StaticShopItem(
                             ItemBuilder.of(Material.BOW)
-                                    .setDisplayName(ChatColor.DARK_PURPLE + "Bogen I")
+                                    .setDisplayName(ChatColor.DARK_PURPLE + "Arc I")
                                     .setDurability((short) 120)
                                     .addEnchantment(Enchantment.ARROW_INFINITE, 1)
                                     .asItemStack(),
@@ -128,7 +128,7 @@ public class Shop {
                             1),
                     new StaticShopItem(
                             ItemBuilder.of(Material.BOW)
-                                    .setDisplayName(ChatColor.DARK_PURPLE + "Bogen II")
+                                    .setDisplayName(ChatColor.DARK_PURPLE + "Arc II")
                                     .setDurability((short) 120)
                                     .addEnchantment(Enchantment.ARROW_INFINITE, 1)
                                     .addEnchantment(Enchantment.ARROW_DAMAGE, 1)
@@ -137,7 +137,7 @@ public class Shop {
                             1),
                     new StaticShopItem(
                             ItemBuilder.of(Material.BOW)
-                                    .setDisplayName(ChatColor.DARK_PURPLE + "Bogen III")
+                                    .setDisplayName(ChatColor.DARK_PURPLE + "Arc III")
                                     .setDurability((short) 120)
                                     .addEnchantment(Enchantment.ARROW_INFINITE, 1)
                                     .addEnchantment(Enchantment.ARROW_DAMAGE, 2)
@@ -146,30 +146,30 @@ public class Shop {
                             ResourceType.GOLD.withAmount(11),
                             1),
                     Shoppable.SPACER,
-                    new StaticShopItem(ItemBuilder.of(Material.ARROW).setDisplayName(ChatColor.DARK_PURPLE + "Pfeil").asItemStack(), ResourceType.GOLD.withAmount(1), 1)
+                    new StaticShopItem(ItemBuilder.of(Material.ARROW).setDisplayName(ChatColor.DARK_PURPLE + "Flèche").asItemStack(), ResourceType.GOLD.withAmount(1), 1)
             ),
-            new ShopCategory("Essen", Material.CAKE,
-                    new StaticShopItem(ItemBuilder.of(Material.APPLE).setDisplayName(ChatColor.DARK_GREEN + "Apfel").asItemStack(), ResourceType.BRONZE.withAmount(2), 64),
+            new ShopCategory("Nourriture", Material.CAKE,
+                    new StaticShopItem(ItemBuilder.of(Material.APPLE).setDisplayName(ChatColor.DARK_GREEN + "Pomme").asItemStack(), ResourceType.BRONZE.withAmount(2), 64),
                     new StaticShopItem(ItemBuilder.of(Material.COOKED_BEEF).setDisplayName(ChatColor.DARK_GREEN + "Streak").asItemStack(), ResourceType.BRONZE.withAmount(4), 64),
-                    new StaticShopItem(ItemBuilder.of(Material.CAKE).setDisplayName(ChatColor.DARK_GREEN + "Kuchen").asItemStack(), ResourceType.SILVER.withAmount(1), 64),
+                    new StaticShopItem(ItemBuilder.of(Material.CAKE).setDisplayName(ChatColor.DARK_GREEN + "Gâteau").asItemStack(), ResourceType.SILVER.withAmount(1), 64),
                     Shoppable.SPACER,
-                    new StaticShopItem(ItemBuilder.of(Material.GOLDEN_APPLE).setDisplayName(ChatColor.DARK_GREEN + "Goldapfel").asItemStack(), ResourceType.GOLD.withAmount(2), 64)
+                    new StaticShopItem(ItemBuilder.of(Material.GOLDEN_APPLE).setDisplayName(ChatColor.DARK_GREEN + "Pomme dorée").asItemStack(), ResourceType.GOLD.withAmount(2), 64)
             ),
-            new ShopCategory("Kisten", Material.ENDER_CHEST,
+            new ShopCategory("Coffres", Material.ENDER_CHEST,
                     new StaticShopItem(Items.CHEST, ResourceType.SILVER.withAmount(2), 64),
                     new StaticShopItem(Items.TEAM_CHEST, ResourceType.GOLD.withAmount(1), 64)
             ),
-            new ShopCategory("Tränke", Material.POTION, item -> item.setDurability((short) 8230),
+            new ShopCategory("Potions", Material.POTION, item -> item.setDurability((short) 8230),
                     new StaticShopItem(
                             ItemBuilder.of(Material.POTION, (short) 8261)
-                                    .setDisplayName(ChatColor.LIGHT_PURPLE + "Heilung I")
+                                    .setDisplayName(ChatColor.LIGHT_PURPLE + "Soin I")
                                     .addCustomPotionEffect(new PotionEffect(PotionEffectType.HEAL, 1, 0))
                                     .asItemStack(),
                             ResourceType.SILVER.withAmount(5),
                             1),
                     new StaticShopItem(
                             ItemBuilder.of(Material.POTION, (short) 8229)
-                                    .setDisplayName(ChatColor.LIGHT_PURPLE + "Heilung II")
+                                    .setDisplayName(ChatColor.LIGHT_PURPLE + "Soin II")
                                     .addCustomPotionEffect(new PotionEffect(PotionEffectType.HEAL, 1, 1))
                                     .asItemStack(),
                             ResourceType.SILVER.withAmount(7),
@@ -183,7 +183,7 @@ public class Shop {
                             1),
                     new StaticShopItem(
                             ItemBuilder.of(Material.POTION, (short) 8201)
-                                    .setDisplayName(ChatColor.LIGHT_PURPLE + "Stärke")
+                                    .setDisplayName(ChatColor.LIGHT_PURPLE + "Force")
                                     .addCustomPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 3600, 0))
                                     .asItemStack(),
                             ResourceType.GOLD.withAmount(5),
@@ -196,8 +196,8 @@ public class Shop {
                     new StaticShopItem(Items.TNT, ResourceType.GOLD.withAmount(5), 64),
                     new StaticShopItem(Items.PARACHUTE, ResourceType.GOLD.withAmount(2), 64),
                     new StaticShopItem(Items.RESCUE_PLATFORM, ResourceType.GOLD.withAmount(3), 64),
-                    new StaticShopItem(ItemBuilder.of(Material.ENDER_PEARL).setDisplayName(ChatColor.GOLD + "Enderperle").asItemStack(), ResourceType.GOLD.withAmount(14), 64),
-                    new StaticShopItem(ItemBuilder.of(Material.WEB).setDisplayName(ChatColor.GOLD + "Spinnennetz").asItemStack(), ResourceType.BRONZE.withAmount(20), 64)
+                    new StaticShopItem(ItemBuilder.of(Material.ENDER_PEARL).setDisplayName(ChatColor.GOLD + "Ender peal").asItemStack(), ResourceType.GOLD.withAmount(14), 64),
+                    new StaticShopItem(ItemBuilder.of(Material.WEB).setDisplayName(ChatColor.GOLD + "toile d'araignée").asItemStack(), ResourceType.BRONZE.withAmount(20), 64)
             )
     };
 

@@ -164,7 +164,7 @@ public class SpectatorListener implements Listener {
 
         ((CraftPlayer) player).getHandle().setSpectatorTarget(((CraftPlayer) rightClicked).getHandle());
         player.sendMessage(RewiBWPlugin.PREFIX + Message.SPECTATOR_TARGET.format(rightClicked.getDisplayName()));
-        player.sendTitle("§6Spieleransicht", "§6Drücke SHIFT zum verlassen");
+        player.sendTitle("§6Vue du joueur", "§6Appuie sur SHIFT pour quitter");
     }
 
     @EventHandler

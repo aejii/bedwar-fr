@@ -24,7 +24,7 @@ public class SpectatorCompass extends UsableItemInfo {
     private static final Inventory SPECTATOR_INVENTORY = Bukkit.createInventory(
             null,
             Math.min(NumberConversions.ceil(RewiBWPlugin.getPluginConfig().getTeams().getMaxPlayers() / 9D), 6) * 9,
-            "§8Spielerliste"
+            "§8Liste des joueurs"
     );
 
     public SpectatorCompass() {
@@ -40,7 +40,7 @@ public class SpectatorCompass extends UsableItemInfo {
                         .setDamage((short) 3)
                         .setSkullOwner(player.getName())
                         .setDisplayName(player.getDisplayName())
-                        .setLore(" ", " §fClicke zum teleportieren")
+                        .setLore(" ", " §fClique pour te téléporter")
                         .asItemStack();
             }
         }
